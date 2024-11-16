@@ -1,0 +1,6 @@
+@GigsAPI_HostAddress = http://localhost:5251
+
+GET {{GigsAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
