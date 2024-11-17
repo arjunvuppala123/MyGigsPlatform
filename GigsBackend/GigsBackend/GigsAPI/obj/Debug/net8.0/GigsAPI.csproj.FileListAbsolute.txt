@@ -27,6 +27,10 @@
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/Mono.TextTemplating.dll
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/Npgsql.dll
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll
+/media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/Serilog.dll
+/media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/Serilog.Extensions.Hosting.dll
+/media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/Serilog.Extensions.Logging.dll
+/media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/SerilogTimings.dll
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/Swashbuckle.AspNetCore.Swagger.dll
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -88,7 +92,9 @@
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/tr/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/BusinessLayer.dll
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/Data.dll
+/media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/BusinessLayer.pdb
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/bin/Debug/net8.0/Data.pdb
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/obj/Debug/net8.0/GigsAPI.csproj.AssemblyReference.cache
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/obj/Debug/net8.0/GigsAPI.GeneratedMSBuildEditorConfig.editorconfig
@@ -97,6 +103,7 @@
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/obj/Debug/net8.0/GigsAPI.csproj.CoreCompileInputs.cache
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/obj/Debug/net8.0/GigsAPI.MvcApplicationPartsAssemblyInfo.cs
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/obj/Debug/net8.0/GigsAPI.MvcApplicationPartsAssemblyInfo.cache
+/media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/obj/Debug/net8.0/GigsAPI.sourcelink.json
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/obj/Debug/net8.0/staticwebassets.build.json
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/obj/Debug/net8.0/staticwebassets.development.json
 /media/arjunv2001/D/Repositories/GigsProject/GigsBackend/GigsBackend/GigsAPI/obj/Debug/net8.0/staticwebassets/msbuild.GigsAPI.Microsoft.AspNetCore.StaticWebAssets.props

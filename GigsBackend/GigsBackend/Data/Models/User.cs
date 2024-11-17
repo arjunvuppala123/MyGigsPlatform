@@ -21,16 +21,11 @@ public class User
     [EmailAddress]
     public string Email { get; set; }
 
-    [Required, MaxLength(255)]
-    public string PasswordHash { get; set; }
-
     public string? ProfilePicture { get; set; }
+    
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 
-    [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-    public DateTime CreatedAt { get; set; } = DateTime.Now;
-
-    [DatabaseGenerated(DatabaseGeneratedOption.Computed)]
-    public DateTime UpdatedAt { get; set; } = DateTime.Now;
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
     // Navigation properties
     public Role Role { get; set; }
