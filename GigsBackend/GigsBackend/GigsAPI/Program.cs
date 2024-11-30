@@ -1,15 +1,39 @@
+using BusinessLayer.Services;
 using Data.Context;
+using GigsAPI.Filters;
+using GigsAPI.Middleware;
 using GigsAPI.StartupExtensions;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Serilog;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((context, configuration) =>
+{
+    configuration.ReadFrom.Configuration(context.Configuration);
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "CORSPolicy", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000")
+               .AllowAnyHeader()
+               .AllowAnyMethod();
+    });
+});
 
 // Add services to the container.
 builder.Services.ConfigureServices(builder.Configuration);
 
-builder.Services.AddControllers();
+builder.Services.AddSignalR();
 
-
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add<ValidateRequestFilter>();
+});
 
 var app = builder.Build();
 
@@ -20,6 +44,17 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors("CORSPolicy");
+
+app.UseHttpRequestLogging();
+app.UseMiddleware<ExceptionMiddleware>();
+app.UseMiddleware<JwtTokenCheckMiddleware>();
+
 app.UseHttpsRedirection();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapHub<ChatHub>("/chatHub");
+
 app.MapControllers();
 app.Run();

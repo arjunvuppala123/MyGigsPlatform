@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { UserProvider } from "@auth0/nextjs-auth0/client";
+import { Toaster } from "react-hot-toast";
 import Navbar from "@/app/components/navbar/navbar";
 import Footer from "@/app/components/footer/footer";
 
@@ -31,6 +32,7 @@ export default function RootLayout({
       <UserProvider>
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <Navbar /> {/* Include Navbar */}
+        <Toaster position="top-right" />
         <main>{children}</main>
         <Footer /> {/* Include Footer */}
         </body>

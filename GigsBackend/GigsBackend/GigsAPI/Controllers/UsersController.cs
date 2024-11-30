@@ -1,3 +1,4 @@
+using BusinessLayer.Dtos.Request;
 using BusinessLayer.Dtos.Response;
 using BusinessLayer.ServiceContracts;
 using DbLayer.Models;
@@ -24,7 +25,7 @@ public class UsersController(IUserServices services) : Controller
     }
 
     [HttpPost]
-    public IActionResult SaveUserInfo([FromBody] User? user)
+    public IActionResult SaveUserInfo([FromBody] SaveUser? user)
     {
         var result = _services.SaveUsers(user);
         if (result)

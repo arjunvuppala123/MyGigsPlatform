@@ -1,4 +1,5 @@
 using BusinessLayer.ServiceContracts;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace GigsAPI.Controllers;

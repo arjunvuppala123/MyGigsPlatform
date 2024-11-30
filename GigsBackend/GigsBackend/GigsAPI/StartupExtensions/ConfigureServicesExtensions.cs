@@ -15,6 +15,7 @@ public static class ConfigureServicesExtensions
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IGendersRepository, GendersRepository>();
         services.AddScoped<IRolesRepository, RolesRepository>();
+        services.AddScoped<IMessageRepository, MessagesRepository>();
         
         //add services
         services.AddScoped<IUserServices, UserServices>();

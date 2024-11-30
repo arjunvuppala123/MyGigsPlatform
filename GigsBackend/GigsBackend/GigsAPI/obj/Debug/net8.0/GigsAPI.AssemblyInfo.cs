@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GigsAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b0b299c0421f7cd04a7b050c8bf0608a9ce8deb1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f7ce236ffa46c0e5a7456df943703f9b45a940e2")]
 [assembly: System.Reflection.AssemblyProductAttribute("GigsAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GigsAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

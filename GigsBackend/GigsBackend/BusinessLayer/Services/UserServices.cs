@@ -1,3 +1,4 @@
+using BusinessLayer.Dtos.Request;
 using BusinessLayer.Dtos.Response;
 using BusinessLayer.ServiceContracts;
 using Data.RepositoryContracts;
@@ -9,7 +10,7 @@ public class UserServices(IUserRepository userRepository) : IUserServices
 {
     private readonly IUserRepository _userRepository = userRepository;
 
-    public bool SaveUsers(User user)
+    public bool SaveUsers(SaveUser user)
     {
         return _userRepository.SaveUser(user);
     }

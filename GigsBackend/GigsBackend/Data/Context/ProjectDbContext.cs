@@ -13,7 +13,7 @@ public class ProjectDbContext : DbContext
     public DbSet<Client> Clients { get; set; }
     public DbSet<Currency> Currencies { get; set; }
     public DbSet<Gig> Gigs { get; set; }
-    public DbSet<Message> Messages { get; set; }
+    public DbSet<Message?> Messages { get; set; }
     public DbSet<Payment> Payments { get; set; }
     public DbSet<Review> Reviews { get; set; }
     public DbSet<Role> Roles { get; set; }

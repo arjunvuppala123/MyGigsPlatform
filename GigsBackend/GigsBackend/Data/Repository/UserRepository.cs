@@ -1,3 +1,4 @@
+using BusinessLayer.Dtos.Request;
 using Data.Context;
 using Data.RepositoryContracts;
 using DbLayer.Models;
@@ -14,7 +15,7 @@ public class UserRepository(ProjectDbContext db) : IUserRepository
         return _db.Users.Any(user => user.Email == email);
     }
     
-    public bool SaveUser(User user)
+    public bool SaveUser(SaveUser user)
     {
         var isInsert = CheckIfUserExists(user.Email);
         if (!isInsert)

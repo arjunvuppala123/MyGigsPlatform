@@ -1,9 +1,10 @@
+using BusinessLayer.Dtos.Request;
 using DbLayer.Models;
 
 namespace Data.RepositoryContracts;
 
 public interface IUserRepository
 {
-    bool SaveUser(User user);
+    bool SaveUser(SaveUser user);
     User? GetUserProfile(string email);
 }
