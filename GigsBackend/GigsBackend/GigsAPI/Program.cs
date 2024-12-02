@@ -21,7 +21,9 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins("http://localhost:3000")
                .AllowAnyHeader()
-               .AllowAnyMethod();
+               .AllowAnyMethod()
+               .SetIsOriginAllowed(origin => true)
+               .AllowCredentials();
     });
 });
 
@@ -46,6 +48,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("CORSPolicy");
 
+app.MapHub<MessagesHub>("/chatHub");
+
 app.UseHttpRequestLogging();
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseMiddleware<JwtTokenCheckMiddleware>();
@@ -53,8 +57,6 @@ app.UseMiddleware<JwtTokenCheckMiddleware>();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
-
-app.MapHub<ChatHub>("/chatHub");
 
 app.MapControllers();
 app.Run();

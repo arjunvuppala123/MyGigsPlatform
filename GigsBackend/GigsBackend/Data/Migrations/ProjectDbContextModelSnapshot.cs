@@ -378,7 +378,6 @@ namespace Data.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedAt")
-                        .ValueGeneratedOnAdd()
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Email")
@@ -388,6 +387,9 @@ namespace Data.Migrations
 
                     b.Property<Guid>("GenderId")
                         .HasColumnType("uuid");
+
+                    b.Property<bool>("IsUserProfileComplete")
+                        .HasColumnType("boolean");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -401,7 +403,6 @@ namespace Data.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("UpdatedAt")
-                        .ValueGeneratedOnAddOrUpdate()
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");

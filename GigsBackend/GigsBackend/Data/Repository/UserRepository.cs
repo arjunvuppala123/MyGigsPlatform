@@ -1,4 +1,5 @@
 using BusinessLayer.Dtos.Request;
+using BusinessLayer.Dtos.Response;
 using Data.Context;
 using Data.RepositoryContracts;
 using DbLayer.Models;
@@ -26,7 +27,8 @@ public class UserRepository(ProjectDbContext db) : IUserRepository
                 GenderId = user.GenderId,
                 Name = user.Name,
                 Email = user.Email,
-                ProfilePicture = string.Empty
+                ProfilePicture = string.Empty,
+                IsUserProfileComplete = true
             };
             _db.Users.Add(insertUser);
         }
@@ -36,6 +38,7 @@ public class UserRepository(ProjectDbContext db) : IUserRepository
             updateUser.GenderId = user.GenderId;
             updateUser.UpdatedAt = DateTime.UtcNow;
             updateUser.Name = user.Name;
+            updateUser.IsUserProfileComplete = true;
         }
         var affectedRows = _db.SaveChanges();
         return affectedRows > 0;

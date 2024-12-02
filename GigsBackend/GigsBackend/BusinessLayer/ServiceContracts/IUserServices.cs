@@ -8,4 +8,5 @@ public interface IUserServices
 {
     public bool SaveUsers(SaveUser user);
     public UserProfileViewModel? GetUserInfo(string? email);
+    public UserCheckModel? UserCheck(string? email);
 }

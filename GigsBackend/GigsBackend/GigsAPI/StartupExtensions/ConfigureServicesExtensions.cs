@@ -21,6 +21,7 @@ public static class ConfigureServicesExtensions
         services.AddScoped<IUserServices, UserServices>();
         services.AddScoped<IGenderService, GenderServices>();
         services.AddScoped<IRoleServices, RolesService>();
+        services.AddScoped<IMessageService, MessageService>();
         
         services.AddDbContext<ProjectDbContext>(opt => 
             opt.UseNpgsql(configuration.GetConnectionString("DefaultConnection"))

@@ -22,6 +22,8 @@ public class User
     public string Email { get; set; }
 
     public string? ProfilePicture { get; set; }
+
+    public bool IsUserProfileComplete { get; set; } =  false;
     
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 

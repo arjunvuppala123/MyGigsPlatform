@@ -14,19 +14,22 @@ public class MessagesRepository(ProjectDbContext db): IMessageRepository
     {
         return await _db.Messages
             .Where(m => m.RecieverId == receiverId)
+            .Include(m => m.Sender) // Includes the Sender User
+            .Include(m => m.Receiver) // Includes the Receiver User
+            .Include(m => m.Gig) // Includes the related Gig
             .GroupBy(m => m.SenderId)
             .Select(g => g.OrderBy(m => m.SentAt).First())
             .ToListAsync();
     }
 
-    public async Task<IEnumerable<Message>> GetMessagesBetweenUsersAsync(Guid senderId, Guid receiverId)
+    public async Task<IEnumerable<Message>> GetMessagesBetweenUsersAsync(Guid messageId)
     {
         return await _db.Messages
-            .Where(m => 
-                (m.SenderId == senderId && m.RecieverId == receiverId) || 
-                (m.SenderId == receiverId && m.RecieverId == senderId)
-            )
-            .OrderBy(m => m.SentAt)
+            .Where(m => m.Id == messageId)
+            .Include(m => m.Sender) // Includes the Sender User
+            .Include(m => m.Receiver) // Includes the Receiver User
+            .Include(m => m.Gig) // Includes the related Gig
+            .OrderBy(m => m.SentAt) // Orders by SentAt
             .ToListAsync();
     }
 

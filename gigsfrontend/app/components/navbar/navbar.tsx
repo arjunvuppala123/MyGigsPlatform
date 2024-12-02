@@ -7,7 +7,6 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user } = useUser();
-    console.log(user)
     // Links shared between desktop and mobile menus
     const links = [
         { href: '/', label: 'Home' },

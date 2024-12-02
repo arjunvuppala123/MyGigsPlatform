@@ -11,21 +11,33 @@ public class JwtTokenCheckMiddleware
 
     public async Task InvokeAsync(HttpContext context)
     {
-        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
+        string token = null;
 
+        // Check the Authorization header for a Bearer token
+        var authorizationHeader = context.Request.Headers["Authorization"].FirstOrDefault();
         if (!string.IsNullOrEmpty(authorizationHeader) && authorizationHeader.StartsWith("Bearer "))
         {
-            var token = authorizationHeader.Substring("Bearer ".Length).Trim();
-
-            context.Items["JwtToken"] = token;
+            token = authorizationHeader.Substring("Bearer ".Length).Trim();
         }
-        else
+
+        // If no token is found in the Authorization header, check the query parameters
+        if (string.IsNullOrEmpty(token))
+        {
+            token = context.Request.Query["access_token"].FirstOrDefault();
+        }
+
+        // If no token is found, return Unauthorized
+        if (string.IsNullOrEmpty(token))
         {
             context.Response.StatusCode = 401;
             await context.Response.WriteAsync("Unauthorized: Missing or invalid JWT token.");
             return;
         }
 
+        // Store the token in the HttpContext for downstream processing
+        context.Items["JwtToken"] = token;
+
+        // Proceed to the next middleware
         await _next(context);
     }
 }

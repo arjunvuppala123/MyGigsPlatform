@@ -35,4 +35,23 @@ public class UserServices(IUserRepository userRepository) : IUserServices
             ProfilePicture = result.ProfilePicture
         };
     }
+
+    public UserCheckModel? UserCheck(string? email)
+    {
+        if (string.IsNullOrEmpty(email))
+        {
+            return null;
+        }
+        
+        var result = _userRepository.GetUserProfile(email);
+        if (result == null)
+            return null;
+
+        return new UserCheckModel()
+        {
+            UserId = result.Id,
+            Role = result.Role.RoleDescription,
+            IsProfileComplete = result.IsUserProfileComplete
+        };
+    }
 }

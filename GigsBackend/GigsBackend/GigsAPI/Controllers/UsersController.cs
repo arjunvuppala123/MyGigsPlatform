@@ -32,4 +32,10 @@ public class UsersController(IUserServices services) : Controller
             return Ok(result);
         return NotFound(result);
     }
+
+    [HttpPost("UserCheck")]
+    public IActionResult UserCheck([FromQuery] string email)
+    {
+        return Ok();
+    }
 }
