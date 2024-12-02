@@ -36,6 +36,7 @@ public class UsersController(IUserServices services) : Controller
     [HttpPost("UserCheck")]
     public IActionResult UserCheck([FromQuery] string email)
     {
-        return Ok();
+        var checkResult = _services.UserCheck(email);
+        return Ok(checkResult ?? new UserCheckModel());
     }
 }
