@@ -1,0 +1,10 @@
+global using CommonUtilitesLibrary.CQRS;
+global using GigsService.Domain.Models;
+global using MediatR;
+global using Mapster;
+global using Microsoft.Extensions.DependencyInjection;
+global using GigsService.Domain.RepostoryInterface;
+global using GigsService.Application.ServiceContracts;
+global using GigsService.Application.Services;
+global using GigsService.Application.Dtos;
+global using GigsService.Domain.CQRSObjects.Commands;

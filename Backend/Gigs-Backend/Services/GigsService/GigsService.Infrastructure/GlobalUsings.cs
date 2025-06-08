@@ -1,0 +1,9 @@
+global using GigsService.Domain.Models;
+global using Mapster;
+global using Microsoft.Extensions.DependencyInjection;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.Extensions.Configuration;
+global using CommonUtilitesLibrary.Data;
+global using CommonUtilitesLibrary.Models;
+global using GigsService.Domain.RepostoryInterface;
+global using GigsService.Infrastructure.Repository;
